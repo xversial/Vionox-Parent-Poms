@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.vionox.pom</groupId>
         <artifactId>base-pom</artifactId>
-        <version>4.0.9-SNAPSHOT</version>
+        <version>4.0.9</version>
         <relativePath>../base-pom</relativePath>
     </parent>
 
