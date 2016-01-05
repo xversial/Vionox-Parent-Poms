@@ -26,7 +26,7 @@
     <scm>
         <connection>scm:git:ssh://git@bitbucket.vionox.com:7999/vionox/parent-poms.git</connection>
         <developerConnection>scm:git:ssh://git@bitbucket.vionox.com:7999/vionox/parent-poms.git</developerConnection>
-        <url>https://bitbucket.org/vionox/parent-poms</url>
+        <url>https://bitbucket.vionox.com/vionox/parent-poms</url>
         <tag>HEAD</tag>
     </scm>
 
