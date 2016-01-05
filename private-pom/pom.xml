@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.vionox.pom</groupId>
+        <artifactId>base-pom</artifactId>
+        <version>4.0.9-SNAPSHOT</version>
+        <relativePath>../base-pom</relativePath>
+    </parent>
+
+    <artifactId>private-pom</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Vionox Private POM</name>
+
+    <distributionManagement>
+        <repository>
+            <id>vionox-private</id>
+            <name>Vionox Private Repository</name>
+            <url>https://maven.vionox.com/private</url>
+        </repository>
+        <snapshotRepository>
+            <id>vionox-private-snapshot</id>
+            <name>Vionox Private Snapshot Repository</name>
+            <url>https://maven.vionox.com/private-snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <properties>
+        <nexus.staging.serverUrl>https://maven.vionox.com/staging/vionox-private/</nexus.staging.serverUrl>
+        <nexus.staging.serverId>vionox-private</nexus.staging.serverId>
+        <nexus.staging.private.profileId>vionox-private-staging</nexus.staging.private.profileId>
+        <nexus.staging.profileId>${nexus.staging.private.profileId}</nexus.staging.profileId>
+        <nexus.staging.autoRelease>true</nexus.staging.autoRelease>
+    </properties>
+</project>

@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.vionox.pom</groupId>
+        <artifactId>base-pom</artifactId>
+        <version>4.0.9-SNAPSHOT</version>
+        <relativePath>../base-pom</relativePath>
+    </parent>
+
+    <artifactId>closedsource-pom</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Vionox Closed Source POM</name>
+
+    <distributionManagement>
+        <repository>
+            <id>vionox-closedsource</id>
+            <name>Vionox Closed Source Repository</name>
+            <url>https://maven.vionox.com/closedsource</url>
+        </repository>
+        <snapshotRepository>
+            <id>vionox-closedsource-snapshot</id>
+            <name>Vionox Closed Source Snapshot Repository</name>
+            <url>https://maven.vionox.com/closedsource-snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <properties>
+        <nexus.staging.serverUrl>https://maven.vionox.com/staging/vionox-closedsource/</nexus.staging.serverUrl>
+        <nexus.staging.serverId>vionox-closedsource</nexus.staging.serverId>
+        <nexus.staging.closedsource.profileId>vionox-closedsource-staging</nexus.staging.closedsource.profileId>
+        <nexus.staging.profileId>${nexus.staging.closedsource.profileId}</nexus.staging.profileId>
+        <nexus.staging.autoRelease>true</nexus.staging.autoRelease>
+    </properties>
+</project>

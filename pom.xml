@@ -1,0 +1,109 @@
+<?xml version="1.0" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.vionox.pom</groupId>
+        <artifactId>base-pom</artifactId>
+        <version>4.0.9-SNAPSHOT</version>
+        <relativePath>base-pom</relativePath>
+    </parent>
+
+    <artifactId>parent-pom</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Vionox parent POM</name>
+
+    <modules>
+        <module>base-pom</module>
+        <module>closedsource-pom</module>
+        <module>private-pom</module>
+        <module>product-pom</module>
+        <module>public-pom</module>
+        <module>central-pom</module>
+    </modules>
+
+    <scm>
+        <connection>scm:git:ssh://git@bitbucket.vionox.com:7999/vionox/parent-poms.git</connection>
+        <developerConnection>scm:git:ssh://git@bitbucket.vionox.com:7999/vionox/parent-poms.git</developerConnection>
+        <url>https://bitbucket.org/vionox/parent-poms</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <nexus.staging.serverUrl>https://maven.vionox.com/staging/vionox-private/</nexus.staging.serverUrl>
+        <nexus.staging.serverId>vionox-private</nexus.staging.serverId>
+        <nexus.staging.private.profileId>vionox-private-staging</nexus.staging.private.profileId>
+        <nexus.staging.profileId>${nexus.staging.private.profileId}</nexus.staging.profileId>
+        <nexus.staging.autoRelease>true</nexus.staging.autoRelease>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>closedsource-pom</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>private-pom</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>product-pom</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>public-pom</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-invoker-plugin</artifactId>
+                <version>1.8</version>
+                <configuration>
+                    <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
+                    <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>integration-tests</id>
+                        <goals>
+                            <goal>install</goal>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>standalone</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-invoker-plugin</artifactId>
+                        <configuration>
+                            <projectsDirectory>${basedir}/src/it-standalone</projectsDirectory>
+                            <cloneProjectsTo>${project.build.directory}/it-standalone</cloneProjectsTo>
+                            <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
+                            <settingsFile>${basedir}/src/it-standalone/empty-settings.xml</settingsFile>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
