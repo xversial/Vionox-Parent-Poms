@@ -28,9 +28,9 @@
     </distributionManagement>
 
     <properties>
-        <nexus.staging.serverUrl>https://maven.vionox.com/staging/vionox-private/</nexus.staging.serverUrl>
+        <nexus.staging.serverUrl>https://maven.vionox.com/</nexus.staging.serverUrl>
         <nexus.staging.serverId>vionox-private</nexus.staging.serverId>
-        <nexus.staging.private.profileId>vionox-private-staging</nexus.staging.private.profileId>
+        <nexus.staging.private.profileId>2a80a7a5a6860</nexus.staging.private.profileId>
         <nexus.staging.profileId>${nexus.staging.private.profileId}</nexus.staging.profileId>
         <nexus.staging.autoRelease>true</nexus.staging.autoRelease>
     </properties>

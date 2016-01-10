@@ -40,9 +40,9 @@
     </distributionManagement>
 
     <properties>
-        <nexus.staging.serverUrl>https://maven.vionox.com/staging/vionox-public/</nexus.staging.serverUrl>
+        <nexus.staging.serverUrl>https://maven.vionox.com/</nexus.staging.serverUrl>
         <nexus.staging.serverId>vionox-public</nexus.staging.serverId>
-        <nexus.staging.public.profileId>vionox-public-staging</nexus.staging.public.profileId>
+        <nexus.staging.public.profileId>2dd49f25c8a0c</nexus.staging.public.profileId>
         <nexus.staging.profileId>${nexus.staging.public.profileId}</nexus.staging.profileId>
         <nexus.staging.autoRelease>true</nexus.staging.autoRelease>
     </properties>

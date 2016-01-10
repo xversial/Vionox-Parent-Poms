@@ -28,9 +28,9 @@
     </distributionManagement>
 
     <properties>
-        <nexus.staging.serverUrl>https://maven.vionox.com/staging/vionox-closedsource/</nexus.staging.serverUrl>
+        <nexus.staging.serverUrl>https://maven.vionox.com/</nexus.staging.serverUrl>
         <nexus.staging.serverId>vionox-closedsource</nexus.staging.serverId>
-        <nexus.staging.closedsource.profileId>vionox-closedsource-staging</nexus.staging.closedsource.profileId>
+        <nexus.staging.closedsource.profileId>2ae16616645da</nexus.staging.closedsource.profileId>
         <nexus.staging.profileId>${nexus.staging.closedsource.profileId}</nexus.staging.profileId>
         <nexus.staging.autoRelease>true</nexus.staging.autoRelease>
     </properties>

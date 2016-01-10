@@ -91,9 +91,9 @@
         <nexus.staging.plugin.baseVersion>1.6.5</nexus.staging.plugin.baseVersion>
         <nexus.staging.plugin.fork>-vionox-2</nexus.staging.plugin.fork>
         <nexus.staging.skip>false</nexus.staging.skip>
-        <nexus.staging.serverUrl>https://maven.vionox.com/staging/vionox-central/</nexus.staging.serverUrl>
+        <nexus.staging.serverUrl>https://maven.vionox.com/</nexus.staging.serverUrl>
         <nexus.staging.serverId>vionox-central</nexus.staging.serverId>
-        <nexus.staging.profileId>vionox-central-staging</nexus.staging.profileId>
+        <nexus.staging.profileId>2ad1f92f3d2a3</nexus.staging.profileId>
         <nexus.staging.autoRelease>true</nexus.staging.autoRelease>
     </properties>
 
@@ -250,6 +250,7 @@
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.6</version>
                 <extensions>true</extensions>
                 <configuration>
                     <skipStaging>${nexus.staging.skip}</skipStaging>
